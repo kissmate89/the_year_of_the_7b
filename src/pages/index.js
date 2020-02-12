@@ -1,21 +1,54 @@
 import React from "react"
-import { Link } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <StaticQuery
+    query={graphql`
+      query {
+        allContentfulClimbingPosts {
+          edges {
+            node {
+              id
+              title
+              createdAt
+            }
+          }
+        }
+        allContentfulClimbingMainPage {
+          nodes {
+            id
+            title
+            content {
+              content
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      const posts = data.allContentfulClimbingPosts.edges
+      const mainData = data.allContentfulClimbingMainPage.nodes[0]
+      return (
+        <Layout>
+          <SEO title={mainData.title} />
+          <p>{mainData.content.content}</p>
+          <ul>
+            {posts &&
+              posts.map(post => (
+                <li key={post.node.id}>
+                  <Link to={`/posts/${post.node.title.replace(/\s/g, "-")}`}>
+                    {post.node.title}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </Layout>
+      )
+    }}
+  />
 )
 
 export default IndexPage
