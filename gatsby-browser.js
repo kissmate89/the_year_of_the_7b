@@ -4,4 +4,16 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+const React = require("react")
+const { ThemeProvider } = require("styled-components")
+
+const { GlobalStyled, theme } = require("./src/styles/main.styles")
+
+exports.wrapRootElement = ({ element }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyled />
+      {element}
+    </ThemeProvider>
+  )
+}

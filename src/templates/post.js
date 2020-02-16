@@ -1,12 +1,31 @@
-import React, { Fragment } from "react"
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+import Layout from "../components/layout"
 
-const Post = ({ pageContext: { title, content } }) => {
-  return (
-    <Fragment>
-      <h1>{title}</h1>
-      <p>{content}</p>
-    </Fragment>
-  )
-}
+const Post = () => (
+  <StaticQuery
+    query={graphql`
+      query($slug: String) {
+        contentfulClimbingPosts(slug: { eq: $slug }) {
+          title
+          content {
+            content
+          }
+        }
+      }
+    `}
+    render={data => {
+      const title = data.contentfulClimbingPosts.title
+      const content = data.contentfulClimbingPosts.content.content
+
+      return (
+        <Layout>
+          <h1>{title}</h1>
+          <p>{content}</p>
+        </Layout>
+      )
+    }}
+  />
+)
 
 export default Post
