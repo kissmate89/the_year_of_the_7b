@@ -1,23 +1,25 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 
+import { H2 } from "../../styles/component.styles"
 import {
   PostListWrapper,
   ListWrapperStyled,
   ListItemStyled,
-} from "../styles/postList.styles"
-import { H2 } from "../styles/component.styles"
+  CreatedDateStyled,
+} from "./postList.styles"
 
 const PostList = () => (
   <StaticQuery
     query={graphql`
       query {
-        allContentfulClimbingPosts {
+        allContentfulClimbingPosts(sort: { fields: createdAt, order: DESC }) {
           edges {
             node {
               id
               slug
               title
+              createdAt(formatString: "DD MMM YYYY")
             }
           }
         }
@@ -32,7 +34,14 @@ const PostList = () => (
             {posts &&
               posts.map(post => (
                 <ListItemStyled key={post.node.id}>
-                  <Link to={`/posts/${post.node.slug}`}>{post.node.title}</Link>
+                  <Link to={`/posts/${post.node.slug}`}>
+                    <div>
+                      <span>{post.node.title}</span>
+                      <CreatedDateStyled>
+                        {post.node.createdAt}
+                      </CreatedDateStyled>
+                    </div>
+                  </Link>
                 </ListItemStyled>
               ))}
           </ListWrapperStyled>

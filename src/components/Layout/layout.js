@@ -2,9 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from "../Header/header"
 
-import { MainStyled } from "../styles/layout.styles"
+import { P } from "../../styles/component.styles"
+import {
+  LayoutWrapperStyled,
+  MainStyled,
+  FooterWrapperStyled,
+} from "./layout.styles"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,12 +23,12 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <LayoutWrapperStyled>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <MainStyled>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built by
+      <MainStyled>{children}</MainStyled>
+      <FooterWrapperStyled>
+        <P>
+          {new Date().getFullYear()}, Built by
           {` `}
           <a
             href="https://www.linkedin.com/in/mate-kiss89/"
@@ -32,9 +37,9 @@ const Layout = ({ children }) => {
           >
             @kissmate89
           </a>
-        </footer>
-      </MainStyled>
-    </>
+        </P>
+      </FooterWrapperStyled>
+    </LayoutWrapperStyled>
   )
 }
 

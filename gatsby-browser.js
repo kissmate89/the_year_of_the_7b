@@ -7,7 +7,8 @@
 const React = require("react")
 const { ThemeProvider } = require("styled-components")
 
-const { GlobalStyled, theme } = require("./src/styles/main.styles")
+const { GlobalStyled } = require("./src/styles/main.styles")
+const { theme } = require("./src/styles/theme")
 
 exports.wrapRootElement = ({ element }) => {
   return (

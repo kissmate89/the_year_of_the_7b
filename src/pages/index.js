@@ -1,9 +1,11 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PostList from "../components/postList"
+import Layout from "../components/Layout/layout"
+import SEO from "../components/SEO/seo"
+import PostList from "../components/PostList/postList"
+
+import { MainTextStyled } from "../styles/index.styles"
 
 const IndexPage = () => (
   <StaticQuery
@@ -24,7 +26,7 @@ const IndexPage = () => (
       return (
         <Layout>
           <SEO title={mainData.title} />
-          <p>{mainData.content.content}</p>
+          <MainTextStyled>{mainData.content.content}</MainTextStyled>
           <PostList />
         </Layout>
       )

@@ -19,6 +19,12 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               slug
+              title
+              content {
+                childMarkdownRemark {
+                  rawMarkdownBody
+                }
+              }
             }
           }
         }
@@ -30,7 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create Product pages
-    const postTemplate = path.resolve(`./src/templates/post.js`)
+    const postTemplate = path.resolve(`./src/templates/Post/post.js`)
     // We want to create a detailed page for each
     // product node. We'll just use the Contentful id for the slug.
     _.each(result.data.allContentfulClimbingPosts.edges, node => {
@@ -46,6 +52,8 @@ exports.createPages = ({ graphql, actions }) => {
         component: slash(postTemplate),
         context: {
           slug: node.node.slug,
+          title: node.node.title,
+          content: node.node.content.childMarkdownRemark.rawMarkdownBody,
         },
       })
     })

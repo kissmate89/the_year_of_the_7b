@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { H1 } from "../styles/component.styles"
-import { HeaderStyled, HeaderTitleStyled } from "../styles/header.styles"
+import { H1 } from "../../styles/component.styles"
+import { HeaderStyled, HeaderTitleStyled } from "./header.styles"
 
 const Header = ({ siteTitle }) => (
   <HeaderStyled>
