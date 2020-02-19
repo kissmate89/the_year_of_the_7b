@@ -8,11 +8,11 @@ const React = require("react")
 const { ThemeProvider } = require("styled-components")
 
 const { GlobalStyled } = require("./src/styles/main.styles")
-const { theme } = require("./src/styles/theme")
+const { lightTheme } = require("./src/styles/theme")
 
 exports.wrapRootElement = ({ element }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={lightTheme}>
       <GlobalStyled />
       {element}
     </ThemeProvider>
