@@ -18,7 +18,7 @@ export const FooterWrapperStyled = styled.footer`
   ${({ theme }) => css`
     padding: ${theme.spacings.large};
     margin: 0 ${theme.defaultSpacing};
-    border-top: 1px solid ${theme.secondaryColor};
+    border-top: 1.5px solid ${theme.secondaryColor};
   `}
 
   text-align: center;

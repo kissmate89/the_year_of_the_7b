@@ -6,15 +6,25 @@
 
 const React = require("react")
 const { ThemeProvider } = require("styled-components")
+const {
+  DarkLightProvider,
+  DarkLightContext,
+} = require("./src/utils/darkLight.provider")
 
 const { GlobalStyled } = require("./src/styles/main.styles")
-const { lightTheme } = require("./src/styles/theme")
+const { lightTheme, darkTheme } = require("./src/styles/theme")
 
 exports.wrapRootElement = ({ element }) => {
   return (
-    <ThemeProvider theme={lightTheme}>
-      <GlobalStyled />
-      {element}
-    </ThemeProvider>
+    <DarkLightProvider>
+      <DarkLightContext.Consumer>
+        {({ isDark }) => (
+          <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+            <GlobalStyled />
+            {element}
+          </ThemeProvider>
+        )}
+      </DarkLightContext.Consumer>
+    </DarkLightProvider>
   )
 }

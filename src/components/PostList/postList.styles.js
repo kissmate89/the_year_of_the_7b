@@ -13,7 +13,7 @@ export const ListItemStyled = styled.li`
   padding: ${({ theme }) => theme.defaultSpacing} 0;
   font-size: ${({ theme }) => theme.fontSizes.large};
   transition: font-size 0.3s ease-in-out;
-  border-bottom: 2px solid ${({ theme }) => theme.secondaryColor};
+  border-bottom: 1px solid ${({ theme }) => theme.secondaryColor};
 
   &:hover {
     font-size: 1.6rem;

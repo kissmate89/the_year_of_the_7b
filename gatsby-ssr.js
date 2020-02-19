@@ -8,13 +8,22 @@
 
 import React from "react"
 import { ThemeProvider } from "styled-components"
+import {
+  useDarkLightProvider,
+  DarkLightProvider,
+} from "./src/utils/darkLight.provider"
 
 import { GlobalStyled } from "./src/styles/main.styles"
-import { lightTheme } from "./src/styles/theme"
+import { lightTheme, darkTheme } from "./src/styles/theme"
 
-export const wrapRootElement = ({ element }) => (
-  <ThemeProvider theme={lightTheme}>
-    <GlobalStyled />
-    {element}
-  </ThemeProvider>
-)
+export const wrapRootElement = ({ element }) => {
+  const { isDark } = useDarkLightProvider()
+  return (
+    <DarkLightProvider>
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <GlobalStyled />
+        {element}
+      </ThemeProvider>
+    </DarkLightProvider>
+  )
+}
