@@ -5,3 +5,16 @@
  */
 
 // You can delete this file if you're not using it
+
+import React from "react"
+import { ThemeProvider } from "styled-components"
+
+import { GlobalStyled } from "./src/styles/main.styles"
+import { lightTheme } from "./src/styles/theme"
+
+export const wrapRootElement = ({ element }) => (
+  <ThemeProvider theme={lightTheme}>
+    <GlobalStyled />
+    {element}
+  </ThemeProvider>
+)
