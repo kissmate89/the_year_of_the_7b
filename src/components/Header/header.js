@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import { useDarkLightProvider } from "../../utils/darkLight.provider"
@@ -16,9 +16,12 @@ const Header = ({ siteTitle }) => {
   const { isDark, changeTheme } = useDarkLightProvider()
   const [isDarkChecked, setIsDarkChecked] = useState(isDark)
 
+  useEffect(() => {
+    setIsDarkChecked(isDark)
+  }, [isDark])
+
   const handleSwitchChange = () => {
-    setIsDarkChecked(!isDark)
-    changeTheme()
+    changeTheme(!isDark)
   }
 
   return (
