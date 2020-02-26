@@ -1,9 +1,9 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 
-import { H2 } from "../../styles/component.styles"
 import {
   PostListWrapper,
+  PostListHeaderStyled,
   ListWrapperStyled,
   ListItemStyled,
   CreatedDateStyled,
@@ -29,7 +29,7 @@ const PostList = () => (
       const posts = data.allContentfulClimbingPosts.edges
       return (
         <PostListWrapper>
-          <H2>Posts</H2>
+          <PostListHeaderStyled>Posts</PostListHeaderStyled>
           <ListWrapperStyled>
             {posts &&
               posts.map(post => (

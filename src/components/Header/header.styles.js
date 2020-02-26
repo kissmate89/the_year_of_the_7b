@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export const HeaderStyled = styled.header`
   ${({ theme }) => css`
-    padding: ${theme.spacings.large} ${theme.defaultSpacing};
+    padding: ${theme.spacings.large} 0;
     margin: 0 ${theme.defaultSpacing} ${theme.spacings.large}
       ${theme.defaultSpacing};
     border-bottom: 1.5px solid ${theme.secondaryColor};

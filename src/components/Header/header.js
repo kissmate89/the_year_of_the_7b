@@ -29,8 +29,9 @@ const Header = ({ siteTitle }) => {
       <H1>
         <HeaderTitleStyled to="/">{siteTitle}</HeaderTitleStyled>
       </H1>
-      <SwitchStyled>
+      <SwitchStyled aria-label="theme switch" htmlFor="darkLightInput">
         <SwitchInputStyled
+          id="darkLightInput"
           type="checkbox"
           onChange={handleSwitchChange}
           checked={isDarkChecked}

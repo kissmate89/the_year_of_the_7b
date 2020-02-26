@@ -10,4 +10,8 @@ export const MarkDownWrapperStyled = styled.div`
   & > * {
     margin-bottom: ${({ theme }) => theme.defaultSpacing};
   }
+
+  a {
+    text-decoration: underline;
+  }
 `
