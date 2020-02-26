@@ -28,8 +28,7 @@ const Layout = ({ children }) => {
       <MainStyled>{children}</MainStyled>
       <FooterWrapperStyled>
         <P>
-          {new Date().getFullYear()}, Built by
-          {` `}
+          &copy; {new Date().getFullYear()}{` `}
           <a
             href="https://www.linkedin.com/in/mate-kiss89/"
             target="_blank"

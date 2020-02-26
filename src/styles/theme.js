@@ -39,8 +39,8 @@ export const lightTheme = {
     primaryColor: "#485454",
     primaryHover: "#2B3333",
     secondaryColor: "#b9cdda",
-    tertiaryColor: "#61776B",
-    tertiaryHover: "#425149",
+    tertiaryColor: "#865053",
+    tertiaryHover: "#643c3e",
     backgroundColor: "#EFF3FF",
   },
 }
@@ -60,14 +60,8 @@ export const darkTheme = {
     primaryColor: "#EFF3FF",
     primaryHover: "#D0D3DD",
     secondaryColor: "#B9CDDA",
-    tertiaryColor: "#B9CDDA",
-    tertiaryHover: "#A0B1BC",
+    tertiaryColor: "#5CCACA",
+    tertiaryHover: "#3bb5b5",
     backgroundColor: "#2B3333",
   },
-}
-
-export const mainTheme = {
-  lightTheme: lightTheme,
-
-  darkTheme: darkTheme,
 }

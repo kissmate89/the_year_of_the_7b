@@ -12,6 +12,7 @@ export const GlobalStyled = createGlobalStyle`
         min-height: 100vh;
         font-family: "Raleway";
         background-color: ${({ theme }) => theme.colors.backgroundColor};
+        line-height: 1.5;
     }
 
     a {
