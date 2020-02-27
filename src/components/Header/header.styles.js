@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
+import Logo from "../../images/logo.svg"
+
 export const HeaderStyled = styled.header`
   ${({ theme }) => css`
     padding: ${theme.spacings.large} 0;
@@ -18,6 +20,11 @@ export const HeaderTitleStyled = styled(Link)`
   &:hover {
     color: ${({ theme }) => theme.colors.primaryHover};
   }
+`
+
+export const LogoStyled = styled(Logo)`
+  width: 40px;
+  margin-right: ${({ theme }) => theme.defaultSpacing};
 `
 
 export const SwitchStyled = styled.label`

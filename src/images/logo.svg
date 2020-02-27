@@ -1,0 +1,20 @@
+<svg viewBox="0 0 368 409" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="411" width="370" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke="currentColor" transform="rotate(-2.9548630714416504 75.90878295898325,129.8703918457032) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="129.870394" x2="142.329216" y1="129.870394" x1="9.488352" stroke-width="16" fill="none"/>
+  <line stroke="currentColor" transform="rotate(-25 183.21919250488278,206.3509063720703) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_3" y2="423.18646" x2="183.21919" y1="-10.484629" x1="183.21919" fill-opacity="null" stroke-opacity="null" stroke-width="16" fill="none"/>
+  <line stroke="currentColor" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="119.453124" x2="276.499994" y1="13.453125" x1="91.5" fill-opacity="null" stroke-opacity="null" stroke-width="16" fill="none"/>
+  <line stroke="currentColor" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="276.453124" x2="352.499994" y1="170.453125" x1="167.5" fill-opacity="null" stroke-opacity="null" stroke-width="16" fill="none"/>
+  <line stroke="currentColor" transform="rotate(-90.30584716796875 309.5000000000001,333.95312500000006) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="372.397244" x2="372.089688" y1="295.509005" x1="246.910305" fill-opacity="null" stroke-opacity="null" stroke-width="16" fill="none"/>
+  <line stroke="currentColor" transform="rotate(-90.30584716796875 234.49999999999997,172.95312499999997) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_7" y2="211.397244" x2="297.089688" y1="134.509005" x1="171.910305" fill-opacity="null" stroke-opacity="null" stroke-width="16" fill="none"/>
+  <line stroke="currentColor" transform="rotate(17.447107315063477 99.24703979492185,263.80419921875) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_8" y2="408.424247" x2="99.247037" y1="119.184136" x1="99.247037" fill-opacity="null" stroke-opacity="null" stroke-width="16" fill="none"/>
+ </g>
+</svg>
