@@ -1,14 +1,7 @@
 import styled from "styled-components"
 
-import { H2 } from "../../styles/component.styles"
-
 export const PostListWrapper = styled.section`
   text-align: center;
-`
-
-export const PostListHeaderStyled = styled(H2)`
-  border-bottom: 1px solid ${({ theme }) => theme.secondaryColor};
-  text-align: left;
 `
 
 export const ListWrapperStyled = styled.ul`

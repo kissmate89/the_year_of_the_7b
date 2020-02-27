@@ -3,7 +3,6 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 import {
   PostListWrapper,
-  PostListHeaderStyled,
   ListWrapperStyled,
   ListItemStyled,
   CreatedDateStyled,
@@ -29,7 +28,6 @@ const PostList = () => (
       const posts = data.allContentfulClimbingPosts.edges
       return (
         <PostListWrapper>
-          <PostListHeaderStyled>Posts</PostListHeaderStyled>
           <ListWrapperStyled>
             {posts &&
               posts.map(post => (

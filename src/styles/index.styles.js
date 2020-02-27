@@ -1,12 +1,13 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
-import { H3 } from "../styles/component.styles"
+import { H2, H3 } from "../styles/component.styles"
 
 export const MainTextStyled = styled(H3)`
-  ${({ theme }) =>
-    css`
-      margin-bottom: calc(${theme.spacings.large} * 2);
-    `};
-
+  margin-bottom: ${({ theme }) => theme.spacings.large};
   text-align: center;
+`
+
+export const TitleStyled = styled(H2)`
+  border-bottom: 1px solid ${({ theme }) => theme.secondaryColor};
+  text-align: left;
 `
