@@ -25,6 +25,19 @@ export const HeaderTitleStyled = styled(Link)`
 export const LogoStyled = styled(Logo)`
   width: 40px;
   margin-right: ${({ theme }) => theme.defaultSpacing};
+  vertical-align: text-bottom;
+
+  @media screen and (min-width: 480px) {
+    vertical-align: middle;
+  }
+`
+
+export const TitleStyled = styled.span`
+  display: none;
+
+  @media screen and (min-width: 480px) {
+    display: initial;
+  }
 `
 
 export const SwitchStyled = styled.label`
