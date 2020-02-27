@@ -7,6 +7,7 @@ import { H1 } from "../../styles/component.styles"
 import {
   HeaderStyled,
   HeaderTitleStyled,
+  LogoStyled,
   SwitchStyled,
   SwitchInputStyled,
   SliderStyled,
@@ -27,7 +28,10 @@ const Header = ({ siteTitle }) => {
   return (
     <HeaderStyled>
       <H1>
-        <HeaderTitleStyled to="/">{siteTitle}</HeaderTitleStyled>
+        <HeaderTitleStyled to="/">
+          <LogoStyled alt="A logo showing a 7 and a B" />
+          <span>{siteTitle}</span>
+        </HeaderTitleStyled>
       </H1>
       <SwitchStyled aria-label="theme switch" htmlFor="darkLightInput">
         <SwitchInputStyled

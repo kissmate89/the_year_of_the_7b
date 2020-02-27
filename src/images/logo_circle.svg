@@ -1,0 +1,21 @@
+<svg width="503" height="503" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="505" width="505" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <ellipse opacity="0.99" ry="246" rx="246" id="svg_9" cy="251.953125" cx="251.5" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#ffffff"/>
+  <line stroke="#000" transform="rotate(-2.9548630714416504 144.90878295898375,166.8703918457029) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="166.870394" x2="211.329216" y1="166.870394" x1="78.488352" stroke-width="10" fill="none"/>
+  <line stroke="#000" transform="rotate(-25 252.21919250488273,243.3509063720703) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_3" y2="460.18646" x2="252.21919" y1="26.515371" x1="252.21919" fill-opacity="null" stroke-opacity="null" stroke-width="10" fill="none"/>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="155.453124" x2="345.499994" y1="49.453125" x1="160.5" fill-opacity="null" stroke-opacity="null" stroke-width="10" fill="none"/>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="313.453124" x2="421.499994" y1="207.453125" x1="236.5" fill-opacity="null" stroke-opacity="null" stroke-width="10" fill="none"/>
+  <line stroke="#000" transform="rotate(-90.30584716796875 379.50000000000006,372.953125) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="411.397244" x2="442.089688" y1="334.509005" x1="316.910305" fill-opacity="null" stroke-opacity="null" stroke-width="10" fill="none"/>
+  <line stroke="#000" transform="rotate(-90.30584716796875 305.5,211.953125) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_7" y2="250.397244" x2="368.089688" y1="173.509005" x1="242.910305" fill-opacity="null" stroke-opacity="null" stroke-width="10" fill="none"/>
+  <line stroke="#000" transform="rotate(17.447107315063477 168.2470397949216,300.80419921875) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_8" y2="445.424247" x2="168.247037" y1="156.184136" x1="168.247037" fill-opacity="null" stroke-opacity="null" stroke-width="10" fill="none"/>
+ </g>
+</svg>
