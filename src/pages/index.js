@@ -1,7 +1,6 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/Layout/layout"
 import SEO from "../components/SEO/seo"
 import CurrentLevel from "../components/CurrentLevel/currentLevel"
 import PostList from "../components/PostList/postList"
@@ -34,7 +33,7 @@ const IndexPage = () => (
       const mainData = data.allContentfulClimbingMainPage.nodes[0]
 
       return (
-        <Layout>
+        <Fragment>
           <SEO title={mainData.title} />
           <MainTextStyled>{mainData.content.content}</MainTextStyled>
           <TitleStyled>Current level</TitleStyled>
@@ -44,7 +43,7 @@ const IndexPage = () => (
           />
           <TitleStyled>Posts</TitleStyled>
           <PostList />
-        </Layout>
+        </Fragment>
       )
     }}
   />

@@ -15,18 +15,19 @@ import {
 
 import { GlobalStyled } from "./src/styles/main.styles"
 import { lightTheme, darkTheme } from "./src/styles/theme"
+import Layout from "./src/components/Layout/layout"
 
-export const wrapRootElement = ({ element }) => {
-  return (
-    <DarkLightProvider>
-      <DarkLightContext.Consumer>
-        {({ isDark }) => (
-          <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-            <GlobalStyled />
-            {element}
-          </ThemeProvider>
-        )}
-      </DarkLightContext.Consumer>
-    </DarkLightProvider>
-  )
-}
+export const wrapRootElement = ({ element }) => (
+  <DarkLightProvider>
+    <DarkLightContext.Consumer>
+      {({ isDark }) => (
+        <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+          <GlobalStyled />
+          {element}
+        </ThemeProvider>
+      )}
+    </DarkLightContext.Consumer>
+  </DarkLightProvider>
+)
+
+export const wrapPageElement = ({ element }) => <Layout>{element}</Layout>
