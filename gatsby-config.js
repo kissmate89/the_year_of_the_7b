@@ -32,12 +32,13 @@ require("dotenv").config({
           name: `The year of the 7b`,
           short_name: `7b`,
           start_url: `/`,
-          background_color: `#663399`,
-          theme_color: `#663399`,
+          background_color: `#2B3333`,
+          theme_color: `#5CCACA`,
           display: `minimal-ui`,
           icon: `src/images/logo_circle.svg`, // This path is relative to the root of the site.
         },
       },
+      "gatsby-plugin-offline",
       {
         resolve: `gatsby-source-contentful`,
         options: {
