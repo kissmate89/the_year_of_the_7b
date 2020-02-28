@@ -1,4 +1,13 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+
+const moveWidth = keyframes`
+  from {
+    width: 0%;
+  }
+  to {
+    width: ${props => `${props.width}%`};
+  }
+`
 
 export const LabelsWrapperStyled = styled.div`
   display: flex;
@@ -28,7 +37,9 @@ export const ProgressBarWrapperStyled = styled.div`
 export const ProgressBarStyled = styled.span`
   display: block;
   height: 14px;
+  animation: ${moveWidth} 0.5s ease-in-out 1s both;
   width: ${props => `${props.width}%`};
+
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border-top-left-radius: 20px;

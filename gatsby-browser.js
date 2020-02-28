@@ -13,6 +13,7 @@ const {
 
 const { GlobalStyled } = require("./src/styles/main.styles")
 const { lightTheme, darkTheme } = require("./src/styles/theme")
+const Layout = require("./src/components/Layout/layout").default
 
 exports.wrapRootElement = ({ element }) => {
   return (
@@ -27,6 +28,10 @@ exports.wrapRootElement = ({ element }) => {
       </DarkLightContext.Consumer>
     </DarkLightProvider>
   )
+}
+
+exports.wrapPageElement = ({ element }) => {
+  return <Layout>{element}</Layout>
 }
 
 exports.registerServiceWorker = () => true
