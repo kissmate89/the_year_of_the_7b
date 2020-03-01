@@ -27,7 +27,7 @@ const CurrentLevel = ({ boulderGrades, leadGrades }) => {
   )
 }
 
-export const gradesShape = {
+const gradesShape = {
   grades: PropTypes.arrayOf(PropTypes.string),
   currentGrade: PropTypes.string,
 }
