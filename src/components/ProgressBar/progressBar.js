@@ -1,4 +1,6 @@
 import React, { Fragment } from "react"
+import PropTypes from "prop-types"
+
 import {
   LabelsWrapperStyled,
   ProgressBarWrapperStyled,
@@ -19,6 +21,11 @@ const ProgressBar = ({ grades, currentGrade }) => {
       </ProgressBarWrapperStyled>
     </Fragment>
   )
+}
+
+ProgressBar.propTypes = {
+  grades: PropTypes.arrayOf(PropTypes.string),
+  currentGrade: PropTypes.string,
 }
 
 export default ProgressBar

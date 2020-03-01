@@ -28,13 +28,14 @@ const Layout = ({ children }) => {
       <MainStyled>{children}</MainStyled>
       <FooterWrapperStyled>
         <P>
-          &copy; {new Date().getFullYear()}{` `}
+          &copy; {new Date().getFullYear()}
+          {` `}
           <a
             href="https://www.linkedin.com/in/mate-kiss89/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            @kissmate89
+            @matekiss89
           </a>
         </P>
       </FooterWrapperStyled>
