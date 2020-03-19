@@ -25,6 +25,15 @@ exports.createPages = ({ graphql, actions }) => {
                   rawMarkdownBody
                 }
               }
+              images {
+                description
+                fluid(maxWidth: 400) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
             }
           }
         }
@@ -39,7 +48,7 @@ exports.createPages = ({ graphql, actions }) => {
     const postTemplate = path.resolve(`./src/templates/Post/post.js`)
     // We want to create a detailed page for each
     // product node. We'll just use the Contentful id for the slug.
-    _.each(result.data.allContentfulClimbingPosts.edges, node => {
+    _.each(result.data.allContentfulClimbingPosts.edges, ({ node }) => {
       // Gatsby uses Redux to manage its internal state.
       // Plugins and sites can use functions like "createPage"
       // to interact with Gatsby.
@@ -48,12 +57,13 @@ exports.createPages = ({ graphql, actions }) => {
         // as a template component. The `context` is
         // optional but is often necessary so the template
         // can query data specific to each page.
-        path: `/posts/${node.node.slug}`,
+        path: `/posts/${node.slug}`,
         component: slash(postTemplate),
         context: {
-          slug: node.node.slug,
-          title: node.node.title,
-          content: node.node.content.childMarkdownRemark.rawMarkdownBody,
+          slug: node.slug,
+          title: node.title,
+          content: node.content.childMarkdownRemark.rawMarkdownBody,
+          images: node.images,
         },
       })
     })
