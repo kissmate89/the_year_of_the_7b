@@ -9,6 +9,9 @@ import {
   LayoutWrapperStyled,
   MainStyled,
   FooterWrapperStyled,
+  SocialLinkStyled,
+  InstaLogoStyled,
+  TwitterLogoStyled,
 } from "./layout.styles"
 
 const Layout = ({ children }) => {
@@ -35,9 +38,26 @@ const Layout = ({ children }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            @matekiss89
+            @kissmate89
           </a>
         </P>
+
+        <div>
+          <a
+            href="https://www.instagram.com/kissmate89/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InstaLogoStyled />
+          </a>
+          <a
+            href="https://twitter.com/kiss_mate89"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <TwitterLogoStyled />
+          </a>
+        </div>
       </FooterWrapperStyled>
     </LayoutWrapperStyled>
   )
