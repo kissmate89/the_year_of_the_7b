@@ -24,8 +24,8 @@ require("dotenv").config({
           },
         },
       },
-      `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
+      `gatsby-transformer-sharp`,
       {
         resolve: `gatsby-plugin-manifest`,
         options: {
@@ -71,8 +71,5 @@ require("dotenv").config({
         resolve: `gatsby-transformer-remark`,
         options: {},
       },
-      // this (optional) plugin enables Progressive Web App + Offline functionality
-      // To learn more, visit: https://gatsby.dev/offline
-      // `gatsby-plugin-offline`,
     ],
   })
