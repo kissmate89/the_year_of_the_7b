@@ -9,7 +9,6 @@ import {
   LayoutWrapperStyled,
   MainStyled,
   FooterWrapperStyled,
-  SocialLinkStyled,
   InstaLogoStyled,
   TwitterLogoStyled,
 } from "./layout.styles"
