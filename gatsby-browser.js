@@ -38,8 +38,8 @@ exports.registerServiceWorker = () => true
 
 exports.onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
-    `This application has been updated. ` +
-      `Reload to display the latest version?`
+    `Some new content is available. ` +
+      `Would you like to reload the site to display the latest version?`
   )
   if (answer === true) {
     window.location.reload()
