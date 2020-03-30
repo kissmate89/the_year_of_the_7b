@@ -99,3 +99,25 @@ export const SwitchInputStyled = styled.input`
     transform: translateX(26px);
   }
 `
+
+export const SwitchWrapperStyled = styled.div`
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 100%;
+  background: ${({ theme }) =>
+    `linear-gradient(40deg, ${theme.colors.tertiaryColor}, ${theme.colors.tertiaryHover} 70%)`};
+`
+
+export const SwitchCrecentStyled = styled.div`
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: 0;
+  border-radius: 100%;
+  transform: ${({ isDark }) => (isDark ? "scale(1)" : "scale(0)")};
+  transform-origin: top right;
+  transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background: ${({ theme }) => theme.colors.backgroundColor};
+`

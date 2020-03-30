@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 
 import { useDarkLightProvider } from "../../utils/darkLight.provider"
@@ -9,18 +9,12 @@ import {
   HeaderTitleStyled,
   LogoStyled,
   TitleStyled,
-  SwitchStyled,
-  SwitchInputStyled,
-  SliderStyled,
+  SwitchWrapperStyled,
+  SwitchCrecentStyled,
 } from "./header.styles"
 
 const Header = ({ siteTitle }) => {
   const { isDark, changeTheme } = useDarkLightProvider()
-  const [isDarkChecked, setIsDarkChecked] = useState(isDark)
-
-  useEffect(() => {
-    setIsDarkChecked(isDark)
-  }, [isDark])
 
   const handleSwitchChange = () => {
     changeTheme(!isDark)
@@ -34,15 +28,9 @@ const Header = ({ siteTitle }) => {
           <TitleStyled>{siteTitle}</TitleStyled>
         </HeaderTitleStyled>
       </H1>
-      <SwitchStyled aria-label="theme switch" htmlFor="darkLightInput">
-        <SwitchInputStyled
-          id="darkLightInput"
-          type="checkbox"
-          onChange={handleSwitchChange}
-          checked={isDarkChecked}
-        />
-        <SliderStyled />
-      </SwitchStyled>
+      <SwitchWrapperStyled isDark={isDark} onClick={handleSwitchChange}>
+        <SwitchCrecentStyled isDark={isDark} />
+      </SwitchWrapperStyled>
     </HeaderStyled>
   )
 }
