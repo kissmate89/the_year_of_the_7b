@@ -4,7 +4,7 @@ require("dotenv").config({
   (module.exports = {
     siteMetadata: {
       title: `The year of the 7b`,
-      description: `A blog about climbing`,
+      description: `A blog about my journey to reach a higher level in climbing`,
       author: `@kissmate89`,
     },
     plugins: [

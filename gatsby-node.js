@@ -35,6 +35,15 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
+
+            next {
+              slug
+              title
+            }
+            previous {
+              slug
+              title
+            }
           }
         }
       }
@@ -48,24 +57,29 @@ exports.createPages = ({ graphql, actions }) => {
     const postTemplate = path.resolve(`./src/templates/Post/post.js`)
     // We want to create a detailed page for each
     // product node. We'll just use the Contentful id for the slug.
-    _.each(result.data.allContentfulClimbingPosts.edges, ({ node }) => {
-      // Gatsby uses Redux to manage its internal state.
-      // Plugins and sites can use functions like "createPage"
-      // to interact with Gatsby.
-      createPage({
-        // Each page is required to have a `path` as well
-        // as a template component. The `context` is
-        // optional but is often necessary so the template
-        // can query data specific to each page.
-        path: `/posts/${node.slug}`,
-        component: slash(postTemplate),
-        context: {
-          slug: node.slug,
-          title: node.title,
-          content: node.content.childMarkdownRemark.rawMarkdownBody,
-          images: node.images,
-        },
-      })
-    })
+    _.each(
+      result.data.allContentfulClimbingPosts.edges,
+      ({ node, next, previous }) => {
+        // Gatsby uses Redux to manage its internal state.
+        // Plugins and sites can use functions like "createPage"
+        // to interact with Gatsby.
+        createPage({
+          // Each page is required to have a `path` as well
+          // as a template component. The `context` is
+          // optional but is often necessary so the template
+          // can query data specific to each page.
+          path: `/posts/${node.slug}`,
+          component: slash(postTemplate),
+          context: {
+            slug: node.slug,
+            title: node.title,
+            content: node.content.childMarkdownRemark.rawMarkdownBody,
+            images: node.images,
+            next: next,
+            previous: previous,
+          },
+        })
+      }
+    )
   })
 }
