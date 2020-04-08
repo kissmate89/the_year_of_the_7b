@@ -2,14 +2,14 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import _chunk from "lodash/chunk"
 
+import { Button, P } from "../../styles/component.styles"
+
 import {
   PostListWrapper,
   ListWrapperStyled,
   ListItemStyled,
   CreatedDateStyled,
   PaginationStyled,
-  PaginationButtonStyled,
-  PageCounterStyled,
 } from "./postList.styles"
 
 const perPage = 5
@@ -60,21 +60,21 @@ const PostList = () => {
           ))}
       </ListWrapperStyled>
       <PaginationStyled>
-        <PaginationButtonStyled
-          isVisible={currentPage > 0}
+        <Button
+          isHidden={currentPage === 0}
           onClick={() => handlePageClick("prev")}
         >
           PREV
-        </PaginationButtonStyled>
-        <PageCounterStyled as="span">
+        </Button>
+        <P as="span">
           {currentPage + 1}/{pageCount}
-        </PageCounterStyled>
-        <PaginationButtonStyled
-          isVisible={currentPage < pageCount - 1}
+        </P>
+        <Button
+          isHidden={currentPage === pageCount - 1}
           onClick={() => handlePageClick("next")}
         >
           NEXT
-        </PaginationButtonStyled>
+        </Button>
       </PaginationStyled>
     </PostListWrapper>
   )

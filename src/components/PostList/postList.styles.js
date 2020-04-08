@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { P } from "../../styles/component.styles"
 
 export const PostListWrapper = styled.section`
   text-align: center;
@@ -31,17 +30,8 @@ export const PaginationStyled = styled.div`
   max-width: 500px;
   gap: ${({ theme }) => theme.defaultSpacing};
   grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
   padding: ${({ theme }) => theme.defaultSpacing} 0;
   margin: auto;
   border-top: 1px solid ${({ theme }) => theme.secondaryColor};
 `
-export const PaginationButtonStyled = styled.button`
-  visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-`
-
-export const PageCounterStyled = styled(P)``
