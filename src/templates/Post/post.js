@@ -1,8 +1,8 @@
 import React, { Fragment } from "react"
-import { Link } from "gatsby"
 import ReactMarkdown from "react-markdown"
+import _get from "lodash/get"
 
-import { H3, P } from "../../styles/component.styles"
+import { H3, P, LinkStyled } from "../../styles/component.styles"
 import {
   PostTitleStyled,
   MarkDownWrapperStyled,
@@ -25,21 +25,6 @@ const Post = ({ pageContext }) => (
       />
     </MarkDownWrapperStyled>
 
-    <PostNavigationWrapperStyled>
-      {pageContext.previous && (
-        <Link to={`posts/${pageContext.previous.slug}`}>
-          {"<- "}
-          {pageContext.previous.title}
-        </Link>
-      )}
-      {pageContext.next && (
-        <Link to={`posts/${pageContext.next.slug}`}>
-          {pageContext.next.title}
-          {" ->"}
-        </Link>
-      )}
-    </PostNavigationWrapperStyled>
-
     {pageContext.images && (
       <PostImageGalleryStyled>
         {pageContext.images.map(image => (
@@ -51,6 +36,21 @@ const Post = ({ pageContext }) => (
         ))}
       </PostImageGalleryStyled>
     )}
+
+    <PostNavigationWrapperStyled>
+      <LinkStyled
+        to={`/posts/${_get(pageContext.previous, "slug")}`}
+        isHidden={!pageContext.previous}
+      >
+        NEWER POST
+      </LinkStyled>
+      <LinkStyled
+        to={`/posts/${_get(pageContext.next, "slug")}`}
+        isHidden={!pageContext.next}
+      >
+        OLDER POST
+      </LinkStyled>
+    </PostNavigationWrapperStyled>
   </Fragment>
 )
 
