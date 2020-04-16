@@ -15,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allContentfulClimbingPosts {
+        allContentfulClimbingPosts(sort: { fields: createdAt, order: DESC }) {
           edges {
             node {
               slug
