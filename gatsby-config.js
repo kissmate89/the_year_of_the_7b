@@ -53,18 +53,9 @@ require("dotenv").config({
         resolve: `gatsby-plugin-styled-components`,
       },
       {
-        resolve: `gatsby-plugin-prefetch-google-fonts`,
+        resolve: `gatsby-plugin-google-fonts`,
         options: {
-          fonts: [
-            {
-              family: `Raleway`,
-              variants: [`400`, `600`],
-            },
-            {
-              family: `Vollkorn`,
-              variants: [`400, 600`],
-            },
-          ],
+          fonts: ["Raleway:400,600", "Vollkorn:400,600"],
         },
       },
       {
