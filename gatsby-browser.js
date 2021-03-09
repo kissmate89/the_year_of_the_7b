@@ -33,15 +33,3 @@ exports.wrapRootElement = ({ element }) => {
 exports.wrapPageElement = ({ element }) => {
   return <Layout>{element}</Layout>
 }
-
-exports.registerServiceWorker = () => true
-
-exports.onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm(
-    `Some new content is available. ` +
-      `Would you like to reload the site to display the latest version?`
-  )
-  if (answer === true) {
-    window.location.reload()
-  }
-}
