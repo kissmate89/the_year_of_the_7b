@@ -34,7 +34,7 @@ const PostList = () => {
   const [currentPage, setCurrentPage] = useState(0)
   const pageCount = posts.length
 
-  const handlePageClick = direction => {
+  const handlePageClick = (direction) => {
     if (direction === "next" && currentPage < pageCount - 1) {
       setCurrentPage(currentPage + 1)
     }
@@ -48,7 +48,7 @@ const PostList = () => {
     <PostListWrapper>
       <ListWrapperStyled>
         {posts &&
-          posts[currentPage].map(post => (
+          posts[currentPage].map((post) => (
             <ListItemStyled key={post.node.id}>
               <Link to={`/posts/${post.node.slug}`}>
                 <div>

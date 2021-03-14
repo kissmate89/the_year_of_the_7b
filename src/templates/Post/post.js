@@ -18,20 +18,20 @@ const Post = ({ pageContext }) => (
       <ReactMarkdown
         source={pageContext.content}
         renderers={{
-          paragraph: props => <P {...props} />,
-          heading: props => <H3 {...props} />,
-          softbreak: props => <br {...props} />,
+          paragraph: (props) => <P {...props} />,
+          heading: (props) => <H3 {...props} />,
+          softbreak: (props) => <br {...props} />,
         }}
       />
     </MarkDownWrapperStyled>
 
     {pageContext.images && (
       <PostImageGalleryStyled>
-        {pageContext.images.map(image => (
+        {pageContext.images.map((image) => (
           <PostImageStyled
             key={image.description}
             alt={image.description}
-            fluid={image.fluid}
+            image={image.gatsbyImageData}
           />
         ))}
       </PostImageGalleryStyled>

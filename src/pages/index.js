@@ -29,7 +29,7 @@ const IndexPage = () => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const mainData = data.allContentfulClimbingMainPage.nodes[0]
 
       return (

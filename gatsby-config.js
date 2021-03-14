@@ -20,12 +20,13 @@ require("dotenv").config({
         resolve: "gatsby-plugin-react-svg",
         options: {
           rule: {
-            include: `${__dirname}/src/images/`, // See below to configure properly
+            include: `${__dirname}/src/images/`,
           },
         },
       },
       `gatsby-plugin-sharp`,
       `gatsby-transformer-sharp`,
+      `gatsby-plugin-image`,
       {
         resolve: `gatsby-plugin-manifest`,
         options: {
@@ -43,7 +44,7 @@ require("dotenv").config({
         options: {
           spaceId: `ue2kj8671j6d`,
           // Learn about environment variables: https://gatsby.app/env-vars
-          host: `https://cdn.contentful.com`,
+          host: `cdn.contentful.com`,
           accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
           environment: `prod-1`,
         },
@@ -59,7 +60,6 @@ require("dotenv").config({
       },
       {
         resolve: `gatsby-transformer-remark`,
-        options: {},
       },
     ],
   })

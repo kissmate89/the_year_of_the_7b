@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import { H2 } from "../../styles/component.styles"
 
@@ -36,6 +36,6 @@ export const PostImageGalleryStyled = styled.div`
   }
 `
 
-export const PostImageStyled = styled(Img)`
+export const PostImageStyled = styled(GatsbyImage)`
   border-radius: 3px;
 `
