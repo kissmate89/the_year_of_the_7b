@@ -4,32 +4,16 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-const React = require("react")
-const { ThemeProvider } = require("styled-components")
-const {
-  DarkLightProvider,
-  DarkLightContext,
-} = require("./src/utils/darkLight.provider")
+import React from "react"
+import { DarkLightProvider } from "./src/utils/darkLight.provider"
+import Layout from "./src/components/layout"
 
-const { GlobalStyled } = require("./src/styles/main.styles")
-const { lightTheme, darkTheme } = require("./src/styles/theme")
-const Layout = require("./src/components/Layout/layout").default
+import "./src/styles/index.css"
 
-exports.wrapRootElement = ({ element }) => {
-  return (
-    <DarkLightProvider>
-      <DarkLightContext.Consumer>
-        {({ isDark }) => (
-          <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-            <GlobalStyled />
-            {element}
-          </ThemeProvider>
-        )}
-      </DarkLightContext.Consumer>
-    </DarkLightProvider>
-  )
+export const wrapRootElement = ({ element }) => {
+  return <DarkLightProvider>{element}</DarkLightProvider>
 }
 
-exports.wrapPageElement = ({ element }) => {
+export const wrapPageElement = ({ element }) => {
   return <Layout>{element}</Layout>
 }

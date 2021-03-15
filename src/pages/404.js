@@ -1,14 +1,12 @@
 import React, { Fragment } from "react"
 
-import SEO from "../components/SEO/seo"
-
-import { H1, P } from "../styles/component.styles"
+import SEO from "../components/seo"
 
 const NotFoundPage = () => (
   <Fragment>
     <SEO title="404: Not found" />
-    <H1>NOT FOUND</H1>
-    <P>You just hit a route that doesn&#39;t exist... the sadness.</P>
+    <h1>NOT FOUND</h1>
+    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
   </Fragment>
 )
 

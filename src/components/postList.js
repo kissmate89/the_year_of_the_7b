@@ -1,16 +1,7 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import _chunk from "lodash/chunk"
-
-import { Button, P } from "../../styles/component.styles"
-
-import {
-  PostListWrapper,
-  ListWrapperStyled,
-  ListItemStyled,
-  CreatedDateStyled,
-  PaginationStyled,
-} from "./postList.styles"
+import classnames from "classnames"
 
 const perPage = 5
 
@@ -45,38 +36,47 @@ const PostList = () => {
   }
 
   return (
-    <PostListWrapper>
-      <ListWrapperStyled>
+    <div className="mx-auto my-6">
+      <ul className="pl-0 text-center">
         {posts &&
           posts[currentPage].map((post) => (
-            <ListItemStyled key={post.node.id}>
+            <li
+              key={post.node.id}
+              className="m-auto py-4 px-0 scale-transition"
+            >
               <Link to={`/posts/${post.node.slug}`}>
-                <div>
-                  <span>{post.node.title}</span>
-                  <CreatedDateStyled>{post.node.createdAt}</CreatedDateStyled>
+                <div className="flex flex-col">
+                  <span className="text-xl text-red-800 dark:text-blue-200 truncate">
+                    {post.node.title}
+                  </span>
+                  <span className="mt-2 text-sm">{post.node.createdAt}</span>
                 </div>
               </Link>
-            </ListItemStyled>
+            </li>
           ))}
-      </ListWrapperStyled>
-      <PaginationStyled>
-        <Button
-          isHidden={currentPage === 0}
+      </ul>
+      <div className="grid max-w-lg gap-4 grid-cols-3 items-center py-4 px-0 m-auto border-t border-gray-400">
+        <button
           onClick={() => handlePageClick("prev")}
+          className={classnames("scale-transition", {
+            "invisible pointer-events-none": currentPage === 0,
+          })}
         >
           PREV
-        </Button>
-        <P as="span">
+        </button>
+        <span className="text-center">
           {currentPage + 1}/{pageCount}
-        </P>
-        <Button
-          isHidden={currentPage === pageCount - 1}
+        </span>
+        <button
           onClick={() => handlePageClick("next")}
+          className={classnames("scale-transition", {
+            "invisible pointer-events-none": currentPage === pageCount - 1,
+          })}
         >
           NEXT
-        </Button>
-      </PaginationStyled>
-    </PostListWrapper>
+        </button>
+      </div>
+    </div>
   )
 }
 

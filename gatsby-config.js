@@ -49,9 +49,7 @@ require("dotenv").config({
           environment: `prod-1`,
         },
       },
-      {
-        resolve: `gatsby-plugin-styled-components`,
-      },
+      `gatsby-plugin-postcss`,
       {
         resolve: `gatsby-plugin-google-fonts`,
         options: {
