@@ -7,10 +7,20 @@ const DarkLightProvider = (props) => {
 
   useEffect(() => {
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      localStorage &&
+      JSON.parse(localStorage.getItem("isDarkTheme")) !== null
     ) {
+      setIsDark(JSON.parse(localStorage.getItem("isDarkTheme")))
+    } else if (typeof window !== undefined && window.matchMedia) {
+      let isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+      setIsDark(isDarkTheme)
+      localStorage.setItem("isDarkTheme", JSON.stringify(isDarkTheme))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isDark) {
       document.documentElement.classList.add("dark")
     } else {
       document.documentElement.classList.remove("dark")
@@ -18,13 +28,8 @@ const DarkLightProvider = (props) => {
   }, [isDark])
 
   const handleThemeChange = (isDarkTheme) => {
-    if (isDarkTheme) {
-      setIsDark(true)
-      localStorage.theme = "dark"
-    } else {
-      setIsDark(false)
-      localStorage.theme = "light"
-    }
+    setIsDark(isDarkTheme)
+    localStorage.setItem("isDarkTheme", JSON.stringify(isDarkTheme))
   }
 
   return (
