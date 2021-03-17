@@ -46,4 +46,4 @@ const DarkLightProvider = (props) => {
 
 const useDarkLightProvider = () => useContext(DarkLightContext)
 
-export { DarkLightProvider, useDarkLightProvider, DarkLightContext }
+export { DarkLightProvider, useDarkLightProvider }
