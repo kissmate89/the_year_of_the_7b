@@ -6,7 +6,6 @@ const DarkLightProvider = (props) => {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
-    console.warn("Mamma mia")
     if (
       localStorage &&
       JSON.parse(localStorage.getItem("isDarkTheme")) !== null
