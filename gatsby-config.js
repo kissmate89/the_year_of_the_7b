@@ -9,6 +9,7 @@ require("dotenv").config({
       author: "@kissmate89",
     },
     plugins: [
+      "gatsby-plugin-postcss",
       "gatsby-plugin-react-helmet",
       {
         resolve: "gatsby-source-filesystem",
@@ -50,7 +51,6 @@ require("dotenv").config({
           environment: "prod-1",
         },
       },
-      "gatsby-plugin-postcss",
       {
         resolve: "gatsby-plugin-google-fonts",
         options: {

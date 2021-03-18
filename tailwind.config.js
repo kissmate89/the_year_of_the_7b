@@ -7,11 +7,8 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      black: colors.black,
-      white: colors.white,
       gray: colors.blueGray,
       red: colors.red,
-      yellow: colors.amber,
       blue: colors.blue,
     },
     fontFamily: {

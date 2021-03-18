@@ -1,65 +1,78 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-   @apply min-h-screen m-0 bg-blue-50 dark:bg-gray-800 font-body;
+  @apply min-h-screen m-0 bg-blue-50 dark:bg-gray-800 font-body;
 }
 
-p, span, h1, h2, h3, h4, h5, h6 {
-   @apply m-0 text-gray-800 dark:text-blue-50 tracking-wide;
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply m-0 text-gray-800 dark:text-blue-50 tracking-wide;
 }
 
-h1, h2, h3 {
-    @apply font-heading font-bold;
+h1,
+h2,
+h3 {
+  @apply font-heading font-bold;
 }
 
-h1, h2 {
-    @apply uppercase;
+h1,
+h2 {
+  @apply uppercase;
 }
 
 h1 {
-    @apply text-3xl;
+  @apply text-3xl;
 }
 
 h2 {
-    @apply text-2xl;
+  @apply text-2xl;
 }
 
 h3 {
-    @apply text-lg;
+  @apply text-lg;
 }
 
-p, span {
-    @apply text-base;
+p,
+span {
+  @apply text-base;
 }
 
-a, button {
-    @apply transition-colors duration-300 ease-in-out text-red-800 dark:text-blue-200;
+a,
+button {
+  @apply transition-colors duration-300 ease-in-out text-red-800 dark:text-blue-200;
 }
 
-a:hover,button:hover {
-    @apply text-red-900 dark:text-blue-300;
+a:hover,
+button:hover {
+  @apply text-red-900 dark:text-blue-300;
 }
 
 a {
-    @apply no-underline;
+  @apply no-underline;
 }
 
 button {
-    @apply font-body px-4 py-2 bg-blue-50 dark:bg-gray-800 border-none cursor-pointer;
+  @apply font-body px-4 py-2 bg-blue-50 dark:bg-gray-800 border-none cursor-pointer;
 }
 
 li {
-    @apply list-none;
+  @apply list-none;
 }
 
 .scale-transition {
-    @apply transition-transform duration-300 ease-in-out transform hover:scale-125;
+  @apply transition-transform duration-300 ease-in-out transform hover:scale-125;
 }
