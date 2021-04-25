@@ -28,8 +28,12 @@ const Header = ({ siteTitle }) => {
           {siteTitle}
         </span>
       </Link>
-      <button onClick={() => changeTheme(!isDark)}>
-        {isDark ? <Sun className="h-6" /> : <Moon className="h-6" />}
+      <button onClick={() => changeTheme(!isDark)} aria-label="theme switch">
+        {isDark ? (
+          <Sun data-testid="sun-icon" className="h-6" />
+        ) : (
+          <Moon data-testid="moon-icon" className="h-6" />
+        )}
       </button>
     </header>
   );

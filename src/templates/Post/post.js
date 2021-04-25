@@ -1,12 +1,15 @@
-import React, { Fragment } from "react"
-import ReactMarkdown from "react-markdown"
-import _get from "lodash/get"
-import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import classnames from "classnames"
+import React, { Fragment } from "react";
+import ReactMarkdown from "react-markdown";
+import _get from "lodash/get";
+import { Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import classnames from "classnames";
+
+import SeoMeta from "../../components/seo";
 
 const Post = ({ pageContext }) => (
   <Fragment>
+    <SeoMeta title={pageContext.title} />
     <h1 className="mb-6">{pageContext.title}</h1>
     <ReactMarkdown
       source={pageContext.content}
@@ -58,6 +61,6 @@ const Post = ({ pageContext }) => (
       </Link>
     </div>
   </Fragment>
-)
+);
 
-export default Post
+export default Post;

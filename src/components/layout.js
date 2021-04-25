@@ -7,7 +7,7 @@ import Header from "./header";
 import InstaLogo from "../images/instagram.svg";
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col max-w-screen-lg mx-auto">
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={site.siteMetadata.title} />
       <main className="px-6 pt-4 flex-grow">{children}</main>
       <footer className="flex justify-between items-center py-6 mx-4 border-t border-gray-400">
         <p>
