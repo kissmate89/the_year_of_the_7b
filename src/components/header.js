@@ -21,7 +21,12 @@ const Header = ({ siteTitle }) => {
           alt="A logo showing a 7 and a B"
           className="inline w-10 mr-4 align-text-bottom sm:align-middle"
         />
-        <span className="hidden sm:inline text-4xl">{siteTitle}</span>
+        <span
+          data-testid="header-title"
+          className="hidden capitalize sm:inline text-4xl"
+        >
+          {siteTitle}
+        </span>
       </Link>
       <button onClick={() => changeTheme(!isDark)}>
         {isDark ? <Sun className="h-6" /> : <Moon className="h-6" />}
