@@ -1,9 +1,9 @@
-import React, { Fragment } from "react"
-import { StaticQuery, graphql } from "gatsby"
+import React, { Fragment } from "react";
+import { StaticQuery, graphql } from "gatsby";
 
-import SEO from "../components/seo"
-import CurrentLevel from "../components/currentLevel"
-import PostList from "../components/postList"
+import SeoMeta from "../components/seo";
+import CurrentLevel from "../components/currentLevel";
+import PostList from "../components/postList";
 
 const IndexPage = () => (
   <StaticQuery
@@ -28,11 +28,11 @@ const IndexPage = () => (
       }
     `}
     render={(data) => {
-      const mainData = data.allContentfulClimbingMainPage.nodes[0]
+      const mainData = data.allContentfulClimbingMainPage.nodes[0];
 
       return (
         <Fragment>
-          <SEO title={mainData.title} />
+          <SeoMeta title={mainData.title} />
           <section className="mb-12">
             <h1 className="text-center mb-4">Welcome</h1>
             <p className="text-center">{mainData.content.content}</p>
@@ -51,9 +51,9 @@ const IndexPage = () => (
             <PostList />
           </section>
         </Fragment>
-      )
+      );
     }}
   />
-)
+);
 
-export default IndexPage
+export default IndexPage;

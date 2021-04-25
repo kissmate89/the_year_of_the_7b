@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import classnames from "classnames"
+import React from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
 
 const CurrentLevel = ({ boulderGrades, leadGrades }) => {
   return (
@@ -10,6 +10,7 @@ const CurrentLevel = ({ boulderGrades, leadGrades }) => {
         <ul className="flex text-gray-800 dark:text-blue-50">
           {boulderGrades.grades.map((grade) => (
             <li
+              key={`boulder-${grade}`}
               className={classnames("mr-4", {
                 "text-lg font-bold text-red-800 dark:text-blue-200":
                   grade === boulderGrades.currentGrade,
@@ -25,6 +26,7 @@ const CurrentLevel = ({ boulderGrades, leadGrades }) => {
         <ul className="flex text-gray-800 dark:text-blue-50">
           {leadGrades.grades.map((grade) => (
             <li
+              key={`lead-${grade}`}
               className={classnames("mr-4", {
                 "text-lg font-bold text-red-800 dark:text-blue-200":
                   grade === leadGrades.currentGrade,
@@ -36,17 +38,17 @@ const CurrentLevel = ({ boulderGrades, leadGrades }) => {
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const gradesShape = {
   grades: PropTypes.arrayOf(PropTypes.string),
   currentGrade: PropTypes.string,
-}
+};
 
 CurrentLevel.propTypes = {
   boulderGrades: PropTypes.shape(gradesShape),
   leadGrades: PropTypes.shape(gradesShape),
-}
+};
 
-export default CurrentLevel
+export default CurrentLevel;

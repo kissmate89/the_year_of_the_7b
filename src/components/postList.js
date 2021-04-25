@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import _chunk from "lodash/chunk"
-import classnames from "classnames"
+import React, { useState } from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import _chunk from "lodash/chunk";
+import classnames from "classnames";
 
-const perPage = 5
+const perPage = 5;
 
 const PostList = () => {
   const data = useStaticQuery(graphql`
@@ -19,21 +19,21 @@ const PostList = () => {
         }
       }
     }
-  `)
-  const posts = _chunk(data.allContentfulClimbingPosts.edges, perPage)
+  `);
+  const posts = _chunk(data.allContentfulClimbingPosts.edges, perPage);
 
-  const [currentPage, setCurrentPage] = useState(0)
-  const pageCount = posts.length
+  const [currentPage, setCurrentPage] = useState(0);
+  const pageCount = posts.length;
 
   const handlePageClick = (direction) => {
     if (direction === "next" && currentPage < pageCount - 1) {
-      setCurrentPage(currentPage + 1)
+      setCurrentPage(currentPage + 1);
     }
 
     if (direction === "prev" && currentPage > 0) {
-      setCurrentPage(currentPage - 1)
+      setCurrentPage(currentPage - 1);
     }
-  }
+  };
 
   return (
     <div className="mx-auto my-6">
@@ -77,7 +77,7 @@ const PostList = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PostList
+export default PostList;

@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Header from "./header"
+import Header from "./header";
 
-import InstaLogo from "../images/instagram.svg"
+import InstaLogo from "../images/instagram.svg";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <div className="min-h-screen flex flex-col max-w-screen-lg mx-auto">
@@ -43,11 +43,11 @@ const Layout = ({ children }) => {
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

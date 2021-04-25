@@ -1,15 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
 
-import { useDarkLightProvider } from "../utils/darkLight.provider"
+import { useDarkLightProvider } from "../utils/darkLight.provider";
 
-import Logo from "../images/logo.svg"
-import Sun from "../images/sun.svg"
-import Moon from "../images/moon.svg"
+import Logo from "../images/logo.svg";
+import Sun from "../images/sun.svg";
+import Moon from "../images/moon.svg";
 
 const Header = ({ siteTitle }) => {
-  const { isDark, changeTheme } = useDarkLightProvider()
+  const { isDark, changeTheme } = useDarkLightProvider();
 
   return (
     <header className="flex justify-between py-6 mx-4 mb-6 border-b border-gray-400">
@@ -32,15 +32,15 @@ const Header = ({ siteTitle }) => {
         {isDark ? <Sun className="h-6" /> : <Moon className="h-6" />}
       </button>
     </header>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;
