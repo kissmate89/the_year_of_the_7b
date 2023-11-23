@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import ReactMarkdown from "react-markdown";
 import _get from "lodash/get";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -11,23 +10,7 @@ const Post = ({ pageContext }) => (
   <Fragment>
     <SeoMeta title={pageContext.title} />
     <h1 className="mb-6">{pageContext.title}</h1>
-    <ReactMarkdown
-      children={pageContext.content}
-      components={{
-        p: (props) => <p className="mb-4" {...props} />,
-        h3: (props) => (
-          <h3 className="mb-4" {...props}>
-            {props.children}
-          </h3>
-        ),
-        br: (props) => <br className="mb-4" {...props} />,
-        a: (props) => (
-          <a className="underline" {...props}>
-            {props.children}
-          </a>
-        ),
-      }}
-    />
+    <div className="post-body" dangerouslySetInnerHTML={{ __html: pageContext.content }} />
 
     {pageContext.images && (
       <div className="grid gap-4 sm:grid-cols-2">

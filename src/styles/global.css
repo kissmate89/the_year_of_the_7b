@@ -76,3 +76,11 @@ li {
 .scale-transition {
   @apply transition-transform duration-300 ease-in-out transform hover:scale-125;
 }
+
+.post-body p, .post-body h3 {
+  @apply mb-4;
+}
+
+.post-body a {
+  @apply underline;
+}

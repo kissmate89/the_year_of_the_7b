@@ -1,16 +1,16 @@
-const _ = require(`lodash`)
-const path = require(`path`)
-const { slash } = require(`gatsby-core-utils`)
+const path = require("path")
+const { slash } = require("gatsby-core-utils")
 
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
 // access to any information necessary to programmatically
 // create pages.
-exports.createPages = async ({ graphql, actions: { createPage } }) => {
+exports.createPages = async ({ graphql, actions }) => {
   // The “graphql” function allows us to run arbitrary
   // queries against the local Contentful graphql schema. Think of
   // it like the site has a built-in database constructed
   // from the fetched data that you can run queries against.
+  const { createPage } = actions
   const postTemplate = path.resolve(`./src/templates/Post/post.js`)
 
   const results = await graphql(
@@ -23,6 +23,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
             content {
               childMarkdownRemark {
                 rawMarkdownBody
+                html
               }
             }
             images {
@@ -59,7 +60,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       context: {
         slug: node.slug,
         title: node.title,
-        content: node.content.childMarkdownRemark.rawMarkdownBody,
+        content: node.content.childMarkdownRemark.html,
         images: node.images,
         next: next,
         previous: previous,
