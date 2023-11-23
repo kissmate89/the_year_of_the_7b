@@ -12,16 +12,16 @@ const Post = ({ pageContext }) => (
     <SeoMeta title={pageContext.title} />
     <h1 className="mb-6">{pageContext.title}</h1>
     <ReactMarkdown
-      source={pageContext.content}
-      renderers={{
-        paragraph: (props) => <p className="mb-4" {...props} />,
-        heading: (props) => (
+      children={pageContext.content}
+      components={{
+        p: (props) => <p className="mb-4" {...props} />,
+        h3: (props) => (
           <h3 className="mb-4" {...props}>
             {props.children}
           </h3>
         ),
-        softbreak: (props) => <br className="mb-4" {...props} />,
-        link: (props) => (
+        br: (props) => <br className="mb-4" {...props} />,
+        a: (props) => (
           <a className="underline" {...props}>
             {props.children}
           </a>

@@ -29,6 +29,7 @@ const Layout = ({ children }) => {
             href="https://www.linkedin.com/in/mate-kiss89/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             @kissmate89
           </a>
@@ -38,6 +39,7 @@ const Layout = ({ children }) => {
           href="https://www.instagram.com/kissmate89/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Instagram"
         >
           <InstaLogo className="h-8" />
         </a>

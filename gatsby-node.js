@@ -14,36 +14,33 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const postTemplate = path.resolve(`./src/templates/Post/post.js`)
 
   const results = await graphql(
-    `
-      {
-        allContentfulClimbingPosts(sort: { fields: createdAt, order: DESC }) {
-          edges {
-            node {
-              slug
-              title
-              content {
-                childMarkdownRemark {
-                  rawMarkdownBody
-                }
-              }
-              images {
-                description
-                gatsbyImageData(width: 400)
+    `{
+      allContentfulClimbingPosts(sort: {createdAt: DESC}) {
+        edges {
+          node {
+            slug
+            title
+            content {
+              childMarkdownRemark {
+                rawMarkdownBody
               }
             }
-
-            next {
-              slug
-              title
+            images {
+              description
+              gatsbyImageData(width: 400)
             }
-            previous {
-              slug
-              title
-            }
+          }
+          next {
+            slug
+            title
+          }
+          previous {
+            slug
+            title
           }
         }
       }
-    `
+    }`
   )
 
   results.data.allContentfulClimbingPosts.edges.forEach((result) => {

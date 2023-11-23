@@ -8,7 +8,7 @@ const perPage = 5;
 const PostList = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulClimbingPosts(sort: { fields: createdAt, order: DESC }) {
+      allContentfulClimbingPosts(sort: {createdAt: DESC}) {
         edges {
           node {
             id

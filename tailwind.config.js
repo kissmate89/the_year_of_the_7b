@@ -1,13 +1,13 @@
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "class", // or 'media' or 'class'
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      gray: colors.blueGray,
+      gray: colors.slate,
       red: colors.red,
       blue: colors.blue,
     },
@@ -15,9 +15,6 @@ module.exports = {
       heading: ["Vollkorn"],
       body: ["Raleway"],
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }
