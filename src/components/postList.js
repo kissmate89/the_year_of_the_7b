@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import _chunk from "lodash/chunk";
 import classnames from "classnames";
 
-const perPage = 5;
+const perPage = 8;
 
 const PostList = () => {
   const data = useStaticQuery(graphql`
@@ -37,13 +37,10 @@ const PostList = () => {
 
   return (
     <div className="mx-auto mt-3">
-      <ul className="pl-0 text-center">
+      <ul className="pl-0 space-y-4 text-center">
         {posts &&
           posts[currentPage].map((post) => (
-            <li
-              key={post.node.id}
-              className="m-auto py-4 px-0 scale-transition"
-            >
+            <li key={post.node.id} className="mx-auto px-0 scale-transition">
               <Link to={`/posts/${post.node.slug}`}>
                 <div className="flex flex-col">
                   <span className="text-xl text-red-800 dark:text-blue-200 truncate">
@@ -55,7 +52,7 @@ const PostList = () => {
             </li>
           ))}
       </ul>
-      <div className="grid max-w-lg gap-4 grid-cols-3 items-center py-4 px-0 m-auto border-t border-gray-400">
+      <div className="grid max-w-lg gap-4 grid-cols-3 items-center pt-4 px-0 mx-auto mt-6 border-t border-gray-400">
         <button
           onClick={() => handlePageClick("prev")}
           className={classnames("scale-transition", {

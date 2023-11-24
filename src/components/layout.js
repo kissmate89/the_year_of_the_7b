@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
     <div className="min-h-screen flex flex-col max-w-screen-lg mx-auto">
       <Header siteTitle={site.siteMetadata.title} />
       <main className="px-6 pt-4 space-y-6 flex-grow">{children}</main>
-      <footer className="flex justify-between items-center py-6 mx-4 border-t border-gray-400">
+      <footer className="flex justify-between items-center py-6 mt-6 mx-4 border-t border-gray-400">
         <p>
           &copy; {new Date().getFullYear()}
           {` `}
