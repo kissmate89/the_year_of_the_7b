@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col max-w-screen-lg mx-auto">
       <Header siteTitle={site.siteMetadata.title} />
-      <main className="px-6 pt-4 flex-grow">{children}</main>
+      <main className="px-6 pt-4 space-y-6 flex-grow">{children}</main>
       <footer className="flex justify-between items-center py-6 mx-4 border-t border-gray-400">
         <p>
           &copy; {new Date().getFullYear()}
@@ -35,14 +35,25 @@ const Layout = ({ children }) => {
           </a>
         </p>
 
-        <a
-          href="https://www.instagram.com/kissmate89/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <InstaLogo className="h-8" />
-        </a>
+        <div className="flex space-x-3">
+          <a
+            href="https://strava.com/athletes/34057799"
+            className="strava-badge- strava-badge-follow"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Strava"
+          >
+            <img src="//badges.strava.com/echelon-sprite-32.png" alt="Strava" />
+          </a>
+          <a
+            href="https://www.instagram.com/kissmate89/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <InstaLogo className="h-8" />
+          </a>
+        </div>
       </footer>
     </div>
   );

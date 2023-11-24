@@ -8,7 +8,7 @@ const perPage = 5;
 const PostList = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulClimbingPosts(sort: {createdAt: DESC}) {
+      allContentfulClimbingPosts(sort: { createdAt: DESC }) {
         edges {
           node {
             id
@@ -36,7 +36,7 @@ const PostList = () => {
   };
 
   return (
-    <div className="mx-auto my-6">
+    <div className="mx-auto mt-3">
       <ul className="pl-0 text-center">
         {posts &&
           posts[currentPage].map((post) => (

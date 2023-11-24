@@ -74,7 +74,7 @@ li {
 }
 
 .scale-transition {
-  @apply transition-transform duration-300 ease-in-out transform hover:scale-125;
+  @apply transition-transform duration-300 ease-in-out transform hover:scale-110;
 }
 
 .post-body p, .post-body h3 {
@@ -84,3 +84,8 @@ li {
 .post-body a {
   @apply underline;
 }
+
+.strava-badge- { display: inline-block; height: 32px; }
+.strava-badge- img { visibility: hidden; height: 32px; }
+.strava-badge-:hover { background-position: 0 -47px; }
+.strava-badge-follow { height: 32px; width: 32px; background: url(//badges.strava.com/echelon-sprite-32.png) no-repeat 0 0; }
