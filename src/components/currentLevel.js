@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 
 const GradesList = ({ gradesList, discipline }) => (
-  <ul className="flex items-center text-gray-800 dark:text-blue-50">
+  <ul className="flex items-center space-x-2 text-gray-800 text-sm dark:text-blue-50 sm:space-x-4">
     {gradesList.grades.map((grade) => (
       <li
         key={`${discipline}-${grade}`}
-        className={classnames("mr-4", {
+        className={classnames({
           "w-8 h-8 text-lg text-center bg-gray-800 text-blue-50 rounded-full dark:bg-gray-50 dark:text-gray-800":
             grade === gradesList.currentGrade,
         })}
