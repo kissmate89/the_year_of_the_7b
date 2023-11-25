@@ -1,13 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { parseJSON, format, setSeconds, startOfDay } from "date-fns";
-import stravaMockdata from "../utils/stravaMockdata";
+import stravaMockdata from "./stravaMockdata";
 
 import SeoMeta from "../components/seo";
-
-// ("http://localhost/exchange_token?state=&code=3c76a993ce4b068abe8e291b0b773cea6603f778&scope=read,activity:read_all");
-
-// ("curl -X POST https://www.strava.com/oauth/token?client_id=117276&client_secret=63859ddf0e0a8083fc9038fa41bb37d7c70cb704&code=3c76a993ce4b068abe8e291b0b773cea6603f778&grant_type=authorization_code");
 
 const callRefresh = `https://www.strava.com/oauth/token?client_id=${process.env.STRAVA_CLIENT_ID}&client_secret=${process.env.STRAVA_CLIENT_SECRET}&refresh_token=${process.env.STRAVA_REFRESH_TOKEN}&grant_type=refresh_token`;
 const callActivities = `https://www.strava.com/api/v3/athlete/activities?per_page=10&access_token=`;
@@ -76,26 +72,26 @@ const ActivitiesPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [activities, setActivities] = useState(stravaMockdata);
 
-  // // Use refresh token to get current access token
-  // useEffect(() => {
-  //   fetch(callRefresh, {
-  //     method: "POST",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((result) => getActivities(result.access_token));
-  // }, [callRefresh]);
+  // Use refresh token to get current access token
+  useEffect(() => {
+    fetch(callRefresh, {
+      method: "POST",
+    })
+      .then((res) => res.json())
+      .then((result) => getActivities(result.access_token));
+  }, []);
 
-  // // use current access token to call all activities
-  // function getActivities(access) {
-  //   // console.log(callActivities + access)
-  //   fetch(callActivities + access)
-  //     .then((res) => res.json())
-  //     .then(
-  //       (data) => setActivities(data),
-  //       setIsLoading((prev) => !prev)
-  //     )
-  //     .catch((e) => console.log(e));
-  // }
+  // use current access token to call all activities
+  function getActivities(access) {
+    // console.log(callActivities + access)
+    fetch(callActivities + access)
+      .then((res) => res.json())
+      .then(
+        (data) => setActivities(data),
+        setIsLoading((prev) => !prev)
+      )
+      .catch((e) => console.log(e));
+  }
 
   return (
     <Fragment>
