@@ -69,7 +69,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   const callRefresh = `https://www.strava.com/oauth/token?client_id=${process.env.STRAVA_CLIENT_ID}&client_secret=${process.env.STRAVA_CLIENT_SECRET}&refresh_token=${process.env.STRAVA_REFRESH_TOKEN}&grant_type=refresh_token`;
-  const callActivities = `https://www.strava.com/api/v3/athlete/activities?per_page=10&access_token=`;
+  const callActivities = `https://www.strava.com/api/v3/athlete/activities?per_page=6&access_token=`;
   const activityPage = path.resolve(`./src/templates/activities.js`);
   const getActivities = (access) =>
     fetch(callActivities + access)
