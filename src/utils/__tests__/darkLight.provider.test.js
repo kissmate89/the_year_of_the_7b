@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent } from "@testing-library/react";
-import '@testing-library/jest-dom'
+import "@testing-library/jest-dom";
 
 import testingRenderer from "../testingRenderer";
 import { useDarkLightProvider } from "../darkLight.provider";
@@ -21,6 +21,7 @@ const DarkLightProviderTest = () => {
 
 describe("DarkLight Provider", () => {
   let mockStorage = {};
+
   beforeEach(() => {
     global.Storage.prototype.setItem = jest.fn((key, value) => {
       mockStorage[key] = value;
