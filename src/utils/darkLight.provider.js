@@ -2,26 +2,25 @@ import React, { createContext, useState, useContext, useEffect } from "react";
 
 const DarkLightContext = createContext();
 
-const getDefaultTheme = () => {
-  let isDarkTheme = false;
-  if (typeof window === "undefined") return isDarkTheme;
-
-  if (localStorage && localStorage.getItem("isDarkTheme") !== null) {
-    isDarkTheme = JSON.parse(localStorage.getItem("isDarkTheme"));
-  } else if (window.matchMedia) {
-    isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    localStorage.setItem("isDarkTheme", isDarkTheme);
-  }
-
-  isDarkTheme
-    ? document.documentElement.classList.add("dark")
-    : document.documentElement.classList.remove("dark");
-
-  return isDarkTheme;
-};
-
 const DarkLightProvider = (props) => {
-  const [isDark, setIsDark] = useState(getDefaultTheme());
+  const [isDark, setIsDark] = useState(null);
+
+  useEffect(() => {
+    let isDarkTheme = false;
+
+    if (localStorage && localStorage.getItem("isDarkTheme") !== null) {
+      isDarkTheme = JSON.parse(localStorage.getItem("isDarkTheme"));
+    } else if (window.matchMedia) {
+      isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      localStorage.setItem("isDarkTheme", isDarkTheme);
+    }
+
+    isDarkTheme
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+
+    setIsDark(isDarkTheme);
+  }, []);
 
   useEffect(() => {
     if (isDark) {
